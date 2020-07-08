@@ -6,10 +6,11 @@ public class Test {
 	static Human h = new Human();
 	static Com c = new Com();
 	static Master m = new Master();
-	public static void main(String[] args) {
-		// mc.setUP();
-		TestHumanTurn();
-	}
+	// public static void main(String[] args) {
+	// 	mc.setUP();
+	// 	TestGame();
+
+	// }
 
 	public static void TestShowCards(){
 		mc.dbshowCards();
@@ -67,7 +68,7 @@ public class Test {
 		System.out.println(deck.BlackJack());
 	}
 
-	public static void TestPlayerChoice(){
+	public static void TestPlayerScrean(){
 		String[] box2 = {"S","A","1"};
 		h.getCard(box2);
 		h.getCard(mc.giveCard());
@@ -77,10 +78,7 @@ public class Test {
 	public static  void TestComChoice(){
 		c.getCard(mc.giveCard());
 		c.getCard(mc.giveCard());
-		c.getCard(mc.giveCard());
 		c.Screan();
-		boolean a = c.Choice();
-		System.out.println(a);
 	}
 
 	public static void TestHumanTurn(){
@@ -88,4 +86,14 @@ public class Test {
 		m.First();
 		m.HumanTurn();
 	}
+
+	public static void TestGame() {
+		m.dbGiveCardToHuman();
+		m.dbGiveCardToCom();
+    m.HumanTurn();
+    m.ComTurn();
+		m.burst();
+		m.battle();
+	}
+
 }
